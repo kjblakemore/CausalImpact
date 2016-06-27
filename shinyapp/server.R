@@ -41,7 +41,7 @@ shinyServer(function(input, output) {
     plot(impact())
   })
 
-  output$report <- renderPrint({
-    summary(impact(), 'report')
+  output$summary <- renderPrint({
+    summary(impact())
   })
 })
