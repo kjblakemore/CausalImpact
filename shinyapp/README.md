@@ -12,7 +12,7 @@ To execute the app, you will need to:
   > devtools::install_github("google/CausalImpact")
   > library(CausalImpact)
   > library(shiny)
-  > runApp(shinyapp)
+  > runApp("shinyapp")
 ```
 4. 
 
