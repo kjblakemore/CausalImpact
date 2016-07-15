@@ -4,6 +4,22 @@ library(pageviews)
 
 shinyServer(function(input, output) {
   impact <- eventReactive(input$submit, {
+
+    # Log query to a csv file.
+    #   Create csv file if it does not exist, writing header line.
+    #   Entries consist of "current_time, pre_start, pre_end, post_start, post_end,
+    #     y_article, x1_article, x2_article, x3_article"
+    LOGFILE <- "causalimpact.csv"
+    if(!file.exists(LOGFILE)) {
+      file.create(LOGFILE)
+      write("current_time, pre_start, pre_end, post_start, post_end, y, x1, x2, x3",
+        file=LOGFILE, append=TRUE)
+    }
+    line <- sprintf("%s, %s, %s, %s, %s, %s, %s, %s, %s", Sys.time(), input$pre_period[1],
+      input$pre_period[2], input$post_period[1], input$post_period[2],
+      input$y_article, input$x1_article, input$x2_article, input$x3_article)
+    write(line, file=LOGFILE, append=TRUE)
+
     # Convert date strings to R objects
     pre_start <- as.Date(input$pre_period[1])
     pre_end <- as.Date(input$pre_period[2])

@@ -14,6 +14,9 @@ To execute the app, you will need to:
   > library(shiny)
   > runApp("shinyapp")
 ```
+
+Queries to the web application are logged in the file *causalimpact.csv*.
+
 Here is an example, showing how an appearance on Saturday Night Live caused Wikipedia page views to increase for the performer, Sia.
 
 ![screenshot](shinyapp.png)
