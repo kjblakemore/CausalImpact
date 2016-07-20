@@ -2,7 +2,7 @@
 
 This subdirectory contains an R Shiny web application to run causal impact analyses of external events on Wikipedia page views.
 
-Causal impact is modeled using Google's [Causal Impact](https://google.github.io/CausalImpact/) R package which implements the algorithms described in the publication [Inferring Causal Impact Using Bayseian Structural Time-Series Models](http://research.google.com/pubs/pub41854.html).  Time series of Wikipedia page views are obtained using the [pageviews](https://github.com/Ironholds/pageviews) R package.
+Causal impact is modeled using Google's [Causal Impact](https://google.github.io/CausalImpact/) R package which implements the algorithms described in the publication [Inferring Causal Impact Using Bayesian Structural Time-Series Models](http://research.google.com/pubs/pub41854.html).  Time series of Wikipedia page views are obtained using the [pageviews](https://github.com/Ironholds/pageviews) R package.
 
 The model is trained using time series of Wikipedia page views for the article thought to be impacted by the external event, as well as similar articles which are presumed not to have been impacted. The resulting model predicts the counterfactual time series. That is, the time series for the impacted article 
 that would have resulted had the external event not occurred. By considering the difference between the actual time series and the counterfactual one, the causal impact can be determined.
